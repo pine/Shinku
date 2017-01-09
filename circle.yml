@@ -13,5 +13,5 @@ deployment:
   production:
     branch: master
     commands:
-      - yarn install -g retry-cli@0.4.0
+      - yarn global add retry-cli@0.4.0
       - yarn run deploy
