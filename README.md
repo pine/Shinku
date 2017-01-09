@@ -20,7 +20,7 @@ $ yarn start      # run in local as debug
 $ yarn run deploy # deploy for production
 ```
 
-## Node
+## Note
 Please set memory > 256 MB for Lambda function, because Shinku uses PhantomJS  needed many memory.
 
 ## License
