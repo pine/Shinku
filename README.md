@@ -1,4 +1,4 @@
-# Shinku [![CircleCI branch](https://img.shields.io/circleci/project/github/pine/Shinku/master.svg?style=flat-square)](https://circleci.com/gh/pine/Shinku) [![David](https://img.shields.io/david/pine/Shinku.svg?style=flat-square)](https://david-dm.org/pine/Shinku) [![David](https://img.shields.io/david/dev/pine/Shinku.svg?style=flat-square)](https://david-dm.org/pine/Shinku)
+# Shinku [![CircleCI](https://circleci.com/gh/pine/Shinku/tree/master.svg?style=shield)](https://circleci.com/gh/pine/Shinku/tree/master) [![Dependency Status](https://gemnasium.com/badges/github.com/pine/Shinku.svg)](https://gemnasium.com/github.com/pine/Shinku)
 
 > The auto-sync tool from GitHub repositories to Slack integrations
 
