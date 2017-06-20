@@ -10,19 +10,15 @@
 ## Requirements
 - Node v4.3.2
 - yarn
-- AWS account
-  - This is a AWS Lambda function
+- IBM Bluemix Account
 
 ## Getting started
 
 ```
 $ yarn
-$ yarn start      # run in local as debug
-$ yarn run deploy # deploy for production
+$ ./bin/job    # run job once
+$ ./bin/worker # run job worker
 ```
 
-## Note
-Please set memory > 256 MB for Lambda function, because Shinku uses PhantomJS  needed many memory.
-
 ## License
-MIT
+MIT &copy; Pine Mizune
