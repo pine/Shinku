@@ -15,4 +15,3 @@ deployment:
     branch: master
     commands:
       - yarn global add retry-cli@0.4.0
-      - yarn run deploy
