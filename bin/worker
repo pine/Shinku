@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+'use strict'
+
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('OK')
+})
+
+app.get('/healthcheck', (req, res) => {
+  res.send('OK')
+})
+
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+  console.log(`Listen: http://localhost:${port}`)
+})
+
+// vim: se et ts=2 sw=2 sts=2 ft=javascript :
