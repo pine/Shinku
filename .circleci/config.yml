@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: node:6.10.2
+    steps:
+      - checkout
+      - restore_cache:
+          key: Shinku-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: System information
+          command: |
+            echo "Node $(node -v)"
+            echo "Yarn v$(yarn --version)"
+      - run:
+          name: Install dependencies
+          command: yarn
+      - save_cache:
+          key: Shinku-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/workspace/node_modules
+            - ~/.cache/yarn/
+      - deploy:
+          name: Deploy to IBM Bluemix
+          command: |
+            apt-get update -qq
+            apt-get install -qq -y apt-transport-https
+            wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | apt-key add -
+            echo "deb http://packages.cloudfoundry.org/debian stable main" | tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+            apt-get update
+            apt-get install -qq -y cf-cli
+
+            cf -v
+            cf api https://api.au-syd.bluemix.net
+            cf login -u $BLUEMIX_USER -p $BLUEMIX_PASSWORD
+            cf push
