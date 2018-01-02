@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 'use strict'
 
-const co = require('co')
 const log = require('fancy-log')
 
 const GitHub = require('../lib/github')
@@ -51,18 +50,19 @@ if (!username) {
 // ----------------------------------------------------------------------------
 
 
-co(function* () {
-  const github = new GitHub({ token })
-  const slack = new Slack({ team, email, password })
+!async function () {
+  try {
+    const github = new GitHub({ token })
+    const slack = new Slack({ team, email, password })
 
-  const repos = yield github.repos(username)
-  log(`${repos.length} repositories found in GitHub`)
+    const repos = await github.repos(username)
+    log(`${repos.length} repositories found in GitHub`)
 
-  yield slack.updateService(serviceId, repos)
-})
-  .catch(err => {
+    await slack.updateService(serviceId, repos)
+  } catch (err) {
     log.error(err)
     process.exit(1)
-  })
+  }
+}()
 
 // vim: se et ts=2 sw=2 sts=2 ft=javascript :
