@@ -24,10 +24,14 @@ app.listen(port, () => {
 // ----------------------------------------------------------------------------
 
 const { CronJob } = require('cron')
+const config = require('config')
 const sync = require('../tasks/sync')
 
+const cronTime = config.get('cron.time')
+const timeZone = config.get('cron.timeZone')
+
 const job = new CronJob({
-  cronTime: '00 15 * * *',
+  cronTime,
   async onTick() {
     log('Cron job started')
     try {
@@ -37,7 +41,7 @@ const job = new CronJob({
     }
   },
   start: true,
-  timeZone: 'Asia/Tokyo',
+  timeZone,
 })
 
 // vim: se et ts=2 sw=2 sts=2 ft=javascript :
