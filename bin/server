@@ -2,7 +2,6 @@
 'use strict'
 
 const log = require('fancy-log')
-const { CronJob } = require('cron')
 
 // ----------------------------------------------------------------------------
 
@@ -24,7 +23,9 @@ app.listen(port, () => {
 
 // ----------------------------------------------------------------------------
 
+const { CronJob } = require('cron')
 const sync = require('../tasks/sync')
+
 const job = new CronJob({
   cronTime: '00 15 * * *',
   async onTick() {
