@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+'use strict'
+
+const log = require('fancy-log')
+const { CronJob } = require('cron')
+
+// ----------------------------------------------------------------------------
+
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('OK')
+})
+
+app.get('/healthcheck', (req, res) => {
+  res.send('OK')
+})
+
+const port = process.env.PORT || 3000
+app.listen(port, () => {
+  log(`Listen: http://0.0.0.0:${port}`)
+})
+
+// ----------------------------------------------------------------------------
+
+const sync = require('../tasks/sync')
+const job = new CronJob({
+  cronTime: '00 15 * * *',
+  async onTick() {
+    log('Cron job started')
+    try {
+      await sync()
+    } catch (e) {
+      log.error(e)
+    }
+  },
+  start: true,
+  timeZone: 'Asia/Tokyo',
+})
+
+// vim: se et ts=2 sw=2 sts=2 ft=javascript :

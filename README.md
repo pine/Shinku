@@ -16,8 +16,8 @@
 
 ```
 $ yarn
-$ ./bin/job    # run job once
-$ ./bin/worker # run job worker
+$ ./bin/run    # run job once
+$ ./bin/server # run job worker
 ```
 
 ## License
