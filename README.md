@@ -2,8 +2,8 @@ Shinku
 -------
 [![CircleCI](https://circleci.com/gh/pine/Shinku/tree/master.svg?style=shield)](https://circleci.com/gh/pine/Shinku/tree/master)
 [![Dependency Status](https://gemnasium.com/badges/github.com/pine/Shinku.svg)](https://gemnasium.com/github.com/pine/Shinku)
-[![codebeat badge](https://codebeat.co/badges/0d14928a-eff0-40ff-bdc4-1ee024f47a54)](https://codebeat.co/projects/github-com-pine-shinku-master)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpine%2FShinku.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpine%2FShinku?ref=badge_shield)
+[![codebeat badge](https://codebeat.co/badges/0d14928a-eff0-40ff-bdc4-1ee024f47a54)](https://codebeat.co/projects/github-com-pine-shinku-master)
 
 > The auto-sync tool from GitHub repositories to Slack integrations
 
