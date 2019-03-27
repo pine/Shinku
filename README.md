@@ -29,4 +29,4 @@ $ ./bin/server # run job worker
 MIT &copy; Pine Mizune
 
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpine%2FShinku.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpine%2FShinku?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fpine%2FShinku.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fpine%2FShinku?ref=badge_large) [![Greenkeeper badge](https://badges.greenkeeper.io/pine/Shinku.svg)](https://greenkeeper.io/)
